@@ -69,10 +69,10 @@
                                         <form method="post" action="{{ route('login') }}">
                                             @csrf
                                             <div class="form-group">
-                                                <input :value="old('email')" type="text" name="email" placeholder="Your Email" required autofocus>
+                                                <x-text-input :value="old('email')" type="text" name="email" placeholder="Your Email" required autofocus />
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Password" required autocomplete="current-password">
+                                                <x-text-input type="password" value="{{ old('password') }}" name="password" placeholder="Password" required autocomplete="current-password" />
                                             </div>
                                             <div class="login_footer form-group">
                                                 <div class="chek-form">
