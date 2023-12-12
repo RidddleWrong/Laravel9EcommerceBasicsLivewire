@@ -38,14 +38,14 @@ class AdminAddProductComponent extends Component
             'slug'=>'required',
             'short_description'=>'required',
             'description'=>'required',
-            'regular_price'=>'required',
-            'sale_price'=>'nullable',
+            'regular_price'=>'required|numeric|regex:/^\d+(\.\d{1,2})?$/',
+            'sale_price'=>'nullable|numeric|regex:/^\d+(\.\d{1,2})?$/',
             'sku'=>'required',
-            'stock_status'=>'required',
-            'featured'=>'required',
-            'quantity'=>'required',
-            'image'=>'required',
-            'category_id'=>'required',
+            'stock_status'=>'required|bool',
+            'featured'=>'required|bool',
+            'quantity'=>'required|int',
+            'image'=>'required|file',
+            'category_id'=>'required|int',
         ]);
         $product = new Product();
         $product->name = $this->name;

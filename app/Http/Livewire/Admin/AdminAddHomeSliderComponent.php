@@ -26,9 +26,9 @@ class AdminAddHomeSliderComponent extends Component
             'title'=>'required',
             'sub_title'=>'required',
             'offer'=>'required',
-            'link'=>'required',
-            'status'=>'required',
-            'image'=>'required',
+            'link'=>'required|url',
+            'status'=>'required|int',
+            'image'=>'required|file',
         ]);
         $slide = new HomeSlider();
         $slide->top_title = $this->top_title;

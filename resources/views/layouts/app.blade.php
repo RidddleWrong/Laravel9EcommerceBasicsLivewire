@@ -54,7 +54,6 @@
                 <div class="col-xl-3 col-lg-4">
                     <div class="header-info header-info-right">
                         @auth
-                            {{--                            @guest--}}
                             <ul>
                                 <li><i class="fi-rs-user"></i> {{ auth()->user()->name }} /
                                     <form action="{{ route('logout') }}" method="post">

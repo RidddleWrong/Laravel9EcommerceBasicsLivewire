@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="mb-3 mt-3">
                                         <label class="form-label">Link</label>
-                                        <input wire:model="link" class="form-control" placeholder="Enter slide link">
+                                        <input wire:model="link" type="url" class="form-control" placeholder="Enter slide link">
                                         @error('link')
                                         <p class="text-danger">{{$message}}</p>
                                         @enderror

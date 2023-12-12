@@ -22,21 +22,21 @@ class AdminAddCategoryComponent extends Component
         $this->slug = Str::slug($this->name);
     }
 
-    public function updated($fields)
-    {
-        $this->validateOnly($fields, [
-            'name'=>'required',
-            'slug'=>'required',
-            'image'=>'required',
-        ]);
-    }
+//    public function updated($fields)
+//    {
+//        $this->validateOnly($fields, [
+//            'name'=>'required',
+//            'slug'=>'required',
+//            'image'=>'required',
+//        ]);
+//    }
 
     public function storeCategory()
     {
         $this->validate([
             'name'=>'required',
             'slug'=>'required',
-            'image'=>'required',
+            'image'=>'required|file',
         ]);
         $category = new Category();
         $category->name = $this->name;

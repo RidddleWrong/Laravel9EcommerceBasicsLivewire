@@ -34,8 +34,8 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                @if(Session::has('message'))
-                                    <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
+                                @if(session()->has('message'))
+                                    <div class="alert alert-success" role="alert">{{session('message')}}</div>
                                 @endif
                                 <form wire:submit.prevent="addProduct">
                                     <div class="mb-3 mt-3">

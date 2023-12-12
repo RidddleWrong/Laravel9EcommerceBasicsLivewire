@@ -34,14 +34,6 @@ class AdminEditCategoryComponent extends Component
         $this->slug = Str::slug($this->name);
     }
 
-    public function updated($fields)
-    {
-        $this->validateOnly($fields, [
-           'name'=>'required',
-           'slug'=>'required',
-        ]);
-    }
-
     public function updateCategory()
     {
         $this->validate([
@@ -52,7 +44,7 @@ class AdminEditCategoryComponent extends Component
         $category->name = $this->name;
         $category->slug = $this->slug;
         if ($this->newImage) {
-//            unlink('assets/imgs/categories/'.$this->image);
+            unlink('assets/imgs/categories/'.$this->image);
             $imageName = Carbon::now()->timestamp.'.'.$this->newImage->extension();
             $this->newImage->storeAs('categories',$imageName);
             $category->image = $imageName;

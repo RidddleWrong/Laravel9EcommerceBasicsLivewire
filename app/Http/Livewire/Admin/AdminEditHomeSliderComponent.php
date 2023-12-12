@@ -37,13 +37,13 @@ class AdminEditHomeSliderComponent extends Component
     public function updateSlide()
     {
         $this->validate([
-            'top_title' => 'required',
-            'title' => 'required',
-            'sub_title' => 'required',
-            'offer' => 'required',
-            'link' => 'required',
-            'status' => 'required',
-            'image' => 'required',
+            'top_title'=>'required',
+            'title'=>'required',
+            'sub_title'=>'required',
+            'offer'=>'required',
+            'link'=>'required|url',
+            'status'=>'required|int',
+            'image'=>'required|file',
         ]);
         $slide = HomeSlider::find($this->slide_id);
         $slide->top_title = $this->top_title;
